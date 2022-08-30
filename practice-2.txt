@@ -1,0 +1,102 @@
+
+
+
+######################################
+
+A. Azure SQL
+1. Azure SQL database - fully managed PAAS database hosted on Azure
+2. Azure SQL managed instance - hosted instance of SQL server with automated maintance
+3. Azure SQL VM - VM with installation of SQL sever,allowing maximum configurability
+ with full maangement responsibility
+
+B. Azure COSMOS DB
+It is a global scale non-relational database that support multiple API's.
+
+C. Azure storage
+Blob container,File share,Tables
+
+D. Azure Data Factory
+it enables you to define and schedule data pipelines to transfer and transform data. 
+Pipelines can be integrated with other azure services.It is used by data engineers for ETL.
+
+E. Azure synapse analytics
+It is a unified data analytics solution that provides a single service interface for
+multiple analytical services.
+Pipelines,SQL,Apache spark,azure synapse data explorer (for querying logs using KQL)
+
+F. Databricks
+it combines apache spark data processing platform with SQL database semantics.
+
+G. Azure HDInsight
+it provides azure hosted clusters for big data processing technologies.
+Spark,Hadoop,HBase,Kafka,Storm.
+
+H. Stream analytics
+real-time stream processing engine that captures stream of data from input applies ETL
+and writes result to an output for analysis.
+
+I. Data Explorer
+used for querying log and telemetry data using KQL 
+
+J. Purview
+solution for enterprise wide data governance and discoverability.used to create map
+and track data lineage across multiple data sources ands system helping in getting data
+for analysis and reporting
+
+K. PowerBI
+used for visualization and reporting
+
+
+
+###############################################
+####  SQL statement Types  ####################
+###############################################
+
+1. DDL - data definiton language ; create,alter,drop,rename
+2. DCL - data control language ; grane,deny,revoke
+3. DML - data manipulation language ; select,insert,update,delete
+
+VIEW - it is a virtual table based on result of SELECT query
+
+STORED PROCEDURE - It defines SQL statements that can be run on command. They are used to encapsulate 
+                   programmatic logic in database for actions that application need too perform when 
+                   working with data
+INDEX - It helps to seach for data in table.
+
+####################################################
+####################################################
+####################################################
+
+1. AZURE BLOB STORAGE
+2. AZURE DATALAKE STORAGE GEN-2
+3. AZURE FILES
+4. AZURE TABLES
+5. AZURE COSMOS DB (AZURE COSMOS DB API's)
+1. Core(SQL) API- manages data in JSON format
+2. MongoDB
+3. Table api
+4. Cassandra API - uses column family storage structure,No-sql database
+5. Gremlin API - used with data in graph structure
+
+
+########################################################
+########################################################
+
+A. DATA WAREHOUSING AND PROCESSING
+data from one or more transactional data stores,files,real-time streams is loaded into datalake or 
+in relational database. Load operation involves ETL/ELT.data ingestion involves both batch processing
+and real-time processing
+
+B. ANALYTICAL DATA-STORE
+data store for large scale analytics include relational data warehouse,file-system based data-lake
+
+C. ANALYTICAL DATA MODEL
+
+D. DATA VISUALIZATION
+
+
+
+
+
+
+
