@@ -1,0 +1,239 @@
+1.https://www.geeksforgeeks.org/python-dictionary-update-method/
+2.https://www.talend.com/resources/sql-vs-nosql/#:~:text=SQL%20is%20the%20programming%20language,generally%20do%20not%20use%20SQL.
+3.https://www.w3schools.com/sql/sql_create_index.asp
+4.https://www.tutorialspoint.com/sql/sql-indexes.htm
+5.gremlin api edges and vertices
+6.SQL insert,append,expand,update
+7.https://www.geeksforgeeks.org/acid-properties-in-dbms/
+8.https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/
+
+
+
+#####################################
+#####################################
+####         DONE               #####
+#####################################
+#####################################
+
+1.Primary and Foreign Key
+2. UPDATE,ALTER,INSERT,APPEND,EXPAND
+A. UPDATE-It is used to update existing records in a database.
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+
+B.ALTER-It is used to add, delete, modify the attributes of the
+        relations (tables) in the database.
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;
+
+ALTER TABLE Customers
+DROP COLUMN Email;
+
+ALTER TABLE Customers
+ADD Email varchar(255);
+
+C.INSERT - With Insert value can be added at any given position
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
+D.APPEND - With Append value can be added only at the end of the list
+E.EXPAND
+
+
+############################################
+########        INDEX           ############
+############################################
+
+The Index in SQL is a special table used to speed up the
+searching of the data in the database tables. It also retrieves
+a vast amount of data from the tables frequently. The INDEX 
+requires its own space in the hard disk.
+
+1.CREATE INDEX index_state ON Employee (Emp_State);  
+2.CREATE INDEX index_city_State ON Employee (Emp_City, Emp_State); 
+
+
+#####################################
+#####  GREMLIN API ##################
+#####################################
+
+The Gremlin API is used with data ina graph structure; in which entities 
+are defined as vertices that form nodes in connected graph. Nodes are 
+connected by edges that represent relationships.
+
+Eg. SUE and Ben works in same office,here Sue and Ben are entities and called as vertices and 
+Sue reports to Ben , it acts as connection/relation between them which is called Edge.
+
+
+####################################
+###### ACID PROPERTIES OF SQL ######
+####################################
+
+A - Atomocity   --- Entire transaction takes place at once or d'snt happen at all
+C - Consistency --- database must be consist before and after the transaction
+I - Isolation   --- Multiple transactions occur independently without interference 
+D - Durability  --- The changes of successful transaction occurs even if the system failure occurs
+
+1. Atomicity - 
+By this ,we mean that either the entire transaction takes place at once or d'snt happen
+at all. There is no midway ie transactions do not occur partially.Each transaction is 
+considered as one unit and either runs to completion or is not executed at all.It involves
+two operations:
+Abort - if a transaction aborts,changes made to database are not visible
+commit - if transaction commits,changes made are visible.
+
+Atomicity is also known as "All or Nothing Rule".
+
+2. Consistency
+If a transaction fails after completion of T1 but before completion of T2,then the amount
+will be deducted from X but not added to Y. This results in inconsistent database state.
+So,the transaction must be executed in its entirety in order to ensure the correctness of
+database path.
+
+This means that integrity constraints must be maintained so that the database is consistent
+before and after the transaction.Its called correctness of database.
+
+
+3. Isolation
+This property ensures that multiple transactions can occur concurrently without leading to
+the inconsistency of database state.transactions occur independently without interference.
+
+Changes occuring in a particular transaction will not be visible to any other transaction
+untill that particular change in that transaction is written to mempry or has committed.
+
+
+4. Durability
+This property ensures that once the transaction has completed execution,the updates and
+modifications to database are stored in and written to disk and they persist even if a system
+failure occurs.These updates now become permanent and are stored in non-volatile memory.
+The effects of the transaction,thus are never lost.
+
+
+######################################################
+############  DDL,DQL,DML,DCL,TCL ####################
+######################################################
+
+1.DDL (DATA DEFINITION LANGUAGE)
+
+it consist of SQL commands that can be used to define the database schema and is used to create
+and modify the structure of database objects in database.
+
+DDL Commands:
+CREATE,DROP,ALTER,TRUNCATE,COMMENT,RENAME
+
+2.DQL (DATA QUERY LANGUAGE)
+DQL statements are used to perform queries on data within schema objects.
+
+DQL Commands:
+SELECT
+
+3.DML (DATA MANIPULATION LANGUAGE)
+These commands deals with manipulation of data present in database.
+
+DML Commands:
+INSERT,UPDATE,DELETE,LOCK,CALL,EXPLAIN PLAN
+
+4. DCL (DATA CONTROL LANGUAGE)
+These commands deals with rights,permission and other controls of database system.
+
+DCL Commands:
+GRANT,REVOKE
+
+5. TCL (Transaction Control Language)
+
+TCL Commands:
+COMMIT - commits transaction
+ROLLBACK - rollbacks transaction incase if any error occurs
+SAVEPOINT - sets a savepoint within a transaction
+SET TRANSACTION - specify characteristics for transaction
+
+
+################################################################
+################################################################
+################# SQL vs NOSQL Differences #####################
+#################                          #####################  
+################################################################
+################################################################
+
+SQL is a programming language used to interface with relational database.
+No-SQL is a class of DBM's that are non-relational and generally do not use SQL.
+
+
+
+
+      SQL                                           NO-SQL
+                            
+1. tabular schema                           Dynamic schema
+2. standard interface                       no standard interface
+3. can scale horizontally using             rely on master-slave architecture,option
+   shrading,partitioning                    for scaling vertically also exist
+
+4. tabular data                             Column-oriented,key-value,document,graph
+5. Properties:ACID
+(Atomicity,Consistency,                     Properties:CAP (Consistency,Availability,
+Isolation,Durability)                                       ,Partition Tolerance)
+
+6. Large community and support              Smaller community and support
+
+7. used for small data,conceptually         used for graph or hierarchical data,datasets
+   modelled as tabular,system where         which are both large and mutate significantly,
+   consistency is critical                  business growing fast but lack data schema
+
+
+##############################################################
+##############################################################
+
+       VIEWS,STORED PROCEDURE,INDEXING
+
+##############################################################
+##############################################################
+
+1. VIEWS
+
+It is a virtual table,d'snt exist physically.It is created by joining query joining
+one or more tables.The fields in a view are fields from one or more real table in database.
+
+CREATE VIEW view AS
+SELECT name
+from data
+where salary >20000;
+
+select * from view;
+
+2. INDEX
+
+Index allows the database application to find data fast,without reading whole table.It 
+is used to find data more quickly and efficiently.Users cannot see indexes,they are just
+used to spped up searches/queries.
+
+CREATE INDEX new
+on employee(name,age);
+
+CREATE UNIQUE INDEX new
+on employee(name);
+
+3. STORED PROCEDURE
+
+It is a prepared SQL code that you can save,so the code can be reused over and over again.
+So,if you have a SQL query that you write over and over again,save it as a 
+stored procedure and then just call it to execute it.
+
+CREATE PROCEDURE SelectAllCustomers
+AS
+SELECT*FROM Customers
+GO;
+
+EXEC SelectAllCustomers;
+
+
+
+
+
+
+
+
+
+ 
+
+

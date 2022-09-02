@@ -1,5 +1,5 @@
 
-https://docs.microsoft.com/en-us/certifications/resources/dp-900-sample-questions?azure-portal=true
+
 
 ######################################
 
